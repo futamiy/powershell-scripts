@@ -72,15 +72,15 @@ if ($AHKVer -eq "1") {
   # Copy AutoHotIntercepton\Lib\ to Documents\AutoHotkey
   Copy-Item -Path "$TempDir\AutoHotIntercepton\Lib" -Destination "$env:USERPROFILE\Documents\AutoHotkey" -Recurse -Force
   # Copy AutoHotIntercepton\Monitor.ahk to Documents\AutoHotkey
-  Copy-Item -Path "$TempDir\AutoHotIntercepton\Monitor.ahk" -Destination "$env:USERPROFILE\Documents\AutoHotkey" -Recurse -Force
+  Copy-Item -Path "$TempDir\AutoHotIntercepton\Monitor.ahk" -Destination "$env:USERPROFILE\Documents\AutoHotkey" -Force
 }
 if ($AHKVer -eq "2") {
   # Copy AutoHotInterception\AHK v2\lib\ to Documents\AutoHotkey
   Copy-Item -Path "$TempDir\AutoHotIntercepton\AHK v2\lib" -Destination "$env:USERPROFILE\Documents\AutoHotkey" -Recurse -Force
   # Copy AutoHotInterception\AHK v2\AutoHotInterception.dll to Documents\AutoHotkey\lib
-  Copy-Item -Path "$TempDir\AutoHotIntercepton\AHK v2\AutoHotInterception.dll" -Destination "$env:USERPROFILE\Documents\AutoHotkey\lib" -Recurse -Force
+  Copy-Item -Path "$TempDir\AutoHotIntercepton\AHK v2\AutoHotInterception.dll" -Destination "$env:USERPROFILE\Documents\AutoHotkey\lib" -Force
   # Copy AutoHotInterception\AHK v2\Monitor.ahk to Documents\AutoHotkey
-  Copy-Item -Path "$TempDir\AutoHotIntercepton\AHK v2\Monitor.ahk" -Destination "$env:USERPROFILE\Documents\AutoHotkey" -Recurse -Force
+  Copy-Item -Path "$TempDir\AutoHotIntercepton\AHK v2\Monitor.ahk" -Destination "$env:USERPROFILE\Documents\AutoHotkey" -Force
 }
 # Copy Interception\librarys\x64\ and x86\ to Documents\AutoHotkey\Lib
 Copy-Item -Path "$TempDir\intercept\Interception\library\x64" -Destination "$env:USERPROFILE\Documents\AutoHotkey\Lib" -Recurse -Force
