@@ -8,7 +8,7 @@ Write-Host ""
 # Check if the script is running as an administrator
 if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')) {
   Write-Host "Please run this script as an administrator" -ForegroundColor Red
-  return 1
+  return
 }
 
 # Install Intercept
