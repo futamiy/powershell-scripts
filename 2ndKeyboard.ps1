@@ -8,7 +8,7 @@ Write-Host ""
 # Check if the script is running as an administrator
 if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')) {
   Write-Host "Please run this script as an administrator" -ForegroundColor Red
-  exit
+  return 1
 }
 
 # Install Intercept
@@ -20,7 +20,7 @@ Write-Host "Intercept only support up to 10 HID keyboard" -ForegroundColor Cyan
 Write-Host "It is recommended to use at least 4 keyboards or below" -ForegroundColor Cyan
 $answer = Read-Host "Do you want to install Intercept? (y/n)" 
 if ($answer -ne "y") {
-  exit
+  return
 }
 # Get Temporary Directory
 $TempDir = [System.IO.Path]::GetTempPath()
@@ -36,7 +36,7 @@ Write-Host ""
 $AHKDownloadURL = ""
 $AHKVer = ""
 $answer = Read-Host "Pick AutoHotkey version? (1/2/n)"
-if ($answer -eq "n") { exit }
+if ($answer -eq "n") { return }
 if ($answer -eq "1") {
   $AHKDownloadURL = "https://www.autohotkey.com/download/ahk-v2.exe"
   $AHKVer = "1"
