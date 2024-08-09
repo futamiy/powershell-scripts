@@ -38,11 +38,11 @@ $AHKVer = ""
 $answer = Read-Host "Pick AutoHotkey version? (1/2/n)"
 if ($answer -eq "n") { return }
 if ($answer -eq "1") {
-  $AHKDownloadURL = "https://www.autohotkey.com/download/ahk-v2.exe"
+  $AHKDownloadURL = "https://www.autohotkey.com/download/ahk-install.exe"
   $AHKVer = "1"
 }
 if ($answer -eq "2") {
-  $AHKDownloadURL = "https://www.autohotkey.com/download/ahk-install.exe"
+  $AHKDownloadURL = "https://www.autohotkey.com/download/ahk-v2.exe"
   $AHKVer = "2"
 }
 
