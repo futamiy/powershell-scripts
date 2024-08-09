@@ -114,8 +114,10 @@ Remove-Item -Path "$TempDir\AutoHotIntercepton.zip" -Force
 Remove-Item -Path "$TempDir\AutoHotIntercepton" -Recurse -Force
 Remove-Item -Path "$TempDir\intercept.zip" -Force
 Remove-Item -Path "$TempDir\intercept" -Recurse -Force
-Remove-Item -Path "$TempDir\TapHoldManager.zip" -Force
-Remove-Item -Path "$TempDir\TapHoldManager" -Recurse -Force
+if ($answer -eq "y") {
+  Remove-Item -Path "$TempDir\TapHoldManager.zip" -Force
+  Remove-Item -Path "$TempDir\TapHoldManager" -Recurse -Force
+}
 
 # Create example
 Write-Host "Creating example..." -ForegroundColor Green
