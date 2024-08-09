@@ -26,7 +26,7 @@ if ($answer -ne "y") {
 $TempDir = [System.IO.Path]::GetTempPath()
 # Download Intercept to Temporary Directory
 Invoke-WebRequest -Uri "https://github.com/oblitum/Interception/releases/download/v1.0.1/Interception.zip" -OutFile "$TempDir\intercept.zip"
-Expand-Archive -Path "intercept.zip" -DestinationPath "intercept" -Force
+Expand-Archive -Path "$TempDir\intercept.zip" -DestinationPath "$TempDir\intercept" -Force
 # Run Intercept install in "DestinationPath\Interception\command line installer\install-interception.exe /install"
 Start-Process -FilePath "$TempDir\intercept\Interception\command line installer\install-interception.exe" -ArgumentList "/install" -Wait
 Write-Host "Intercept Installed" -ForegroundColor Green
@@ -66,7 +66,7 @@ if ($AHKVer -eq "1") {
 if ($AHKVer -eq "2") {
   Invoke-WebRequest -Uri "https://github.com/evilC/AutoHotInterception/releases/download/v0.9.1/AutoHotInterception.zip" -OutFile "$TempDir\AutoHotIntercepton.zip"
 }
-Expand-Archive -Path "AutoHotIntercepton.zip" -DestinationPath "AutoHotIntercepton" -Force
+Expand-Archive -Path "$TempDir\AutoHotIntercepton.zip" -DestinationPath "$TempDir\AutoHotIntercepton" -Force
 
 if ($AHKVer -eq "1") {
   # Copy AutoHotIntercepton\Lib\ to Documents\AutoHotkey
@@ -96,7 +96,7 @@ if ($answer -eq "y") {
   # Download TapHoldManager
   Write-Host "Downloading TapHoldManager..." -ForegroundColor Green
   Invoke-WebRequest -Uri "https://github.com/evilC/TapHoldManager/releases/download/v2.0/TapHoldManager.zip" -OutFile "$TempDir\TapHoldManager.zip"
-  Expand-Archive -Path "TapHoldManager.zip" -DestinationPath "TapHoldManager" -Force
+  Expand-Archive -Path "$TempDir\TapHoldManager.zip" -DestinationPath "$TempDir\TapHoldManager" -Force
   if ($AHKVer -eq "1") {
     # Copy TapHoldManager\AHK v1\lib\ to Documents\AutoHotkey\
     Copy-Item -Path "$TempDir\TapHoldManager\AHK v1\lib" -Destination "$env:USERPROFILE\Documents\AutoHotkey" -Recurse -Force
